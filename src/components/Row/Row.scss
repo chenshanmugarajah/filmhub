@@ -1,0 +1,22 @@
+.row {
+    padding: 10px;
+
+    .row__title {
+        color: white;
+    }
+    
+    .row__posters {
+        display: flex;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: hidden;
+        }
+
+        .row__poster {
+            height: 200px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+}
