@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Row.scss";
 
 const Row = ({ title, requestUrl, isLarge }) => {
@@ -6,10 +7,14 @@ const Row = ({ title, requestUrl, isLarge }) => {
   const base_url = "https://image.tmdb.org/t/p/original/";
 
   useEffect(() => {
+    console.log("Row effect called");
     async function fetchData() {
       await fetch(requestUrl)
         .then((response) => response.json())
-        .then((data) => setFilms(data.results))
+        .then((data) => {
+          console.log("data recieved: ", data);
+          setFilms(data.results.filter((data) => data.backdrop_path != null));
+        })
         .catch((error) => console.log(error));
     }
     fetchData();
@@ -20,14 +25,16 @@ const Row = ({ title, requestUrl, isLarge }) => {
       <h2 className="row__title">{title}</h2>
       <div className="row__posters">
         {films.map((film) => (
-          <img
-            className={`row__poster ${isLarge && "row__posterLarge"}`}
-            key={film.id}
-            src={`${base_url}${
-              isLarge ? film.poster_path : film.backdrop_path
-            }`}
-            alt={film.title}
-          />
+          <Link className="link" to={`/film/${film.id}/details`} state={{ film }}>
+            <img
+              className={`row__poster ${isLarge && "row__posterLarge"}`}
+              key={film.id}
+              src={`${base_url}${
+                isLarge ? film.poster_path : film.backdrop_path
+              }`}
+              alt={film.title}
+            />
+          </Link>
         ))}
       </div>
     </div>

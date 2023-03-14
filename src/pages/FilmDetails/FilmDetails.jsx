@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./FilmDetails.scss";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -19,9 +19,12 @@ const FilmDetails = () => {
         />
         <h3>{film.overview}</h3>
       </div>
-      <Link className="link" to={`/film/${film.id}/display`} state={{ film }}>
-        Watch now
-      </Link>
+      <iframe
+        title="film-display"
+        className="video"
+        src={"https://autoembed.to/movie/tmdb/" + film.id}
+        allowFullScreen={true}
+      ></iframe>
     </div>
   );
 };

@@ -22,6 +22,9 @@ const Homepage = () => {
       <Navbar />
       { popularFilms.length > 0 && <Banner film={popularFilms[Math.floor(Math.random() * popularFilms.length - 1)]}/> }
       <Row title="Trending Films" requestUrl={requests.fetchTrending} isLarge={true} />
+      {/* <Row title="Dhanush Films" requestUrl={requests.tamilMoviesWithDhanush} isLarge={false} /> */}
+      <Row title="Comedy Films" requestUrl={requests.tamilComedyMovies} isLarge={false} />
+      <Row title="Horror Films" requestUrl={requests.tamilHorrorMovies} isLarge={false} />
 
       
       {/* <div className="popularList">

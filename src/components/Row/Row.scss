@@ -1,22 +1,38 @@
 .row {
-    padding: 10px;
+  padding: 10px;
 
-    .row__title {
-        color: white;
+  .row__title {
+    color: white;
+  }
+
+  .row__posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
     }
-    
-    .row__posters {
-        display: flex;
-        overflow: scroll;
+    .link {
+      all: unset;
 
-        &::-webkit-scrollbar {
-            display: hidden;
-        }
+      .row__poster {
+        height: 150px;
+        padding: 10px 5px;
+        cursor: pointer;
+        transition: transform 450ms;
 
-        .row__poster {
-            height: 200px;
-            padding: 10px;
-            cursor: pointer;
+        &:hover {
+          transform: scale(1.04);
+          opacity: 1;
         }
+      }
+
+      .row__posterLarge {
+        height: 200px;
+        padding: 10px;
+        cursor: pointer;
+      }
     }
+  }
 }
