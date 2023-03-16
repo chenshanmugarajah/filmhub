@@ -25,7 +25,7 @@ const Row = ({ title, requestUrl, isLarge }) => {
       <h2 className="row__title">{title}</h2>
       <div className="row__posters">
         {films.map((film) => (
-          <Link className="link" to={`/film/${film.id}/details`} state={{ film }}>
+          <Link className="link" to={`/film/${film.id}`} state={{ film }}>
             <img
               className={`row__poster ${isLarge && "row__posterLarge"}`}
               key={film.id}

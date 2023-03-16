@@ -1,19 +1,28 @@
 .filmdetails {
-    padding: 30px;
+  .filmdetails__details {
+    margin: 10px 0;
+    padding: 20px;
+    color: white;
     text-align: center;
 
-    h1 {
+    .filmdetails_summary {
+        margin: 15px 0;
+    }
+    .filmdetails_detailswrap {
+      display: flex;
+      justify-content: space-around;
+      
+      h1 {
         font-size: 2rem;
+        letter-spacing: 2px;
+      }
+  
+      h4 {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
     }
-
-    .filminfo {
-        h3 {
-            text-align: justify;
-            font-size: 1rem;
-        }
-        img {
-            max-height: 300px;
-        }
-    }
-
+  }
 }

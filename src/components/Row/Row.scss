@@ -13,6 +13,7 @@
     &::-webkit-scrollbar {
       display: none;
     }
+    
     .link {
       all: unset;
 
@@ -20,10 +21,10 @@
         height: 150px;
         padding: 10px 5px;
         cursor: pointer;
-        transition: transform 450ms;
+        transition: transform 500ms;
 
         &:hover {
-          transform: scale(1.04);
+          transform: scale(1.06);
           opacity: 1;
         }
       }
