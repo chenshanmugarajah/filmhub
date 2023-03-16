@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import "./FilmDetails.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
-import requests from "../../services/Requests.js";
+// import requests from "../../services/Requests.js";
 
 const FilmDetails = () => {
   const location = useLocation();
