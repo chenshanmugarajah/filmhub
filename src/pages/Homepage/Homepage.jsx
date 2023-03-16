@@ -26,7 +26,7 @@ const Homepage = () => {
     <div className="homepage">
       <Navbar />
       { popularFilms.length > 0 && <Banner myList={true} film={popularFilms[Math.floor(Math.random() * popularFilms.length - 1)]}/> }
-      <MemoizedRow title="Trending Films" requestUrl={requests.fetchTrending} isLarge={true} />
+      <MemoizedRow title="Trending Films" requestUrl={requests.fetchTrending} isLarge={false} />
       <MemoizedRow title="Comedy Films" requestUrl={requests.comedyMovies} isLarge={false} />
       <MemoizedRow title="Horror Films" requestUrl={requests.horrorMovies} isLarge={false} />
     </div>
