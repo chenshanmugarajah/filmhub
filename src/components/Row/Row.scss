@@ -13,26 +13,40 @@
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     .link {
       all: unset;
 
-      .row__poster {
-        height: 150px;
-        padding: 10px 5px;
-        cursor: pointer;
+      .row__poster_container {
+        position: relative;
+        display: inline-block;
+
+        .row__poster_title {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          right: 0;
+          color: #fff;
+          text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        }
+        
         transition: transform 500ms;
+        .row__poster {
+          height: 150px;
+          padding: 10px 5px;
+          cursor: pointer;
+        }
+
+        .row__posterLarge {
+          height: 200px;
+          padding: 10px;
+          cursor: pointer;
+        }
 
         &:hover {
-          transform: scale(1.06);
+          transform: scale(1.03);
           opacity: 1;
         }
-      }
-
-      .row__posterLarge {
-        height: 200px;
-        padding: 10px;
-        cursor: pointer;
       }
     }
   }

@@ -26,14 +26,17 @@ const Row = ({ title, requestUrl, isLarge }) => {
       <div className="row__posters">
         {films.map((film) => (
           <Link className="link" to={`/film/${film.id}`} state={{ film }}>
-            <img
-              className={`row__poster ${isLarge && "row__posterLarge"}`}
-              key={film.id}
-              src={`${base_url}${
-                isLarge ? film.poster_path : film.backdrop_path
-              }`}
-              alt={film.title}
-            />
+            <div className="row__poster_container">
+              <img
+                className={`row__poster ${isLarge && "row__posterLarge"}`}
+                key={film.id}
+                src={`${base_url}${
+                  isLarge ? film.poster_path : film.backdrop_path
+                }`}
+                alt={film.title}
+              />
+              <h3 className="row__poster_title">{film.title}</h3>
+            </div>
           </Link>
         ))}
       </div>
