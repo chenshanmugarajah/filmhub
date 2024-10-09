@@ -10,7 +10,7 @@ const FilmDisplay = () => {
     <iframe
       title="film-display"
       className="filmdisplay"
-      src={"https://autoembed.to/movie/tmdb/" + id}
+      src={"https://autoembed.co/movie/tmdb/" + id}
       allowFullScreen={true}
       allow="autoplay"
     ></iframe>
